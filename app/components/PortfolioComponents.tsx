@@ -132,35 +132,14 @@ export const ProjectCard = ({ title, tags, imageUrl, marginTopClass = '' }: Proj
   </article>
 );
 
-export const GalleryPage = () => {
-  const projects = [
-    {
-      title: 'Spatial Data Management',
-      tags: ['ArcPy', 'Python', 'QGIS'],
-      imageUrl:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuBCPybVMnRR8kQc5JO3R9jgQSmfQBph0Bj3dw_f7wVMpTM_KdF9eutBFyrX6usN-1Mor4yNWTE7DjJ5vZDHZ5oByUW8abNGe6z-vHYbsfcyNL5wGmHj1XhhLLQ-tmN3URPU6AOiOM_1v0S-4tcZp6zNUkyQ4ub3GrluiQD3r-0PcBQEHIi2bix5IJZ8-j9LekI9wzewz8qZYIjiybjPtkHrexgNFpm36GrqhQdjlLGsKxw2BpAeI6KPdcRh8jq7pwzPGp1K6rdKUv4'
-    },
-    {
-      title: 'Workflow Automation Scripts',
-      tags: ['Python', 'Automation', 'CLI'],
-      imageUrl:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuAhQtl5Jcpuu1mArHldcqQUFOZqhP6HwRu6UKMMnfVLifbUenhDQ5iYHGbtyQzjefnR8j-XaJ0BzwMNJ5IK6mZhTmIwn5-NdKT40CsvAqSL3KfSSthnsG6z8VEBJGGzJsgtaHvIhMF8VVIfWuInGoy2lf0fH6E421pqVMryqcvXDxwJ6S1B-5R6aMXJHf-CSKIiC23_dbEwO_gL9zcVtHGiXdzQt_z98qaxorUHEiUKqMr5Pp17Yg_C181tyk28t__cWBkn3PfPA94',
-      marginTopClass: 'md:mt-16'
-    },
-    {
-      title: 'Creative Design Assets',
-      tags: ['Illustrator', 'Design', 'Branding'],
-      imageUrl:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuDJA79O3kSL-BfGWoM7JU6RewxispbWxCYcfLHaiAxYIjWVUxj_BsdbB9wUYRKUmS-lB5I9nM2gVUdQMvvxWwFWLa5YcFbnuFwfcLqDwyhvtAKd6Wc_irnYBBsFzbWih0-zMCpdGwc1sTXQ8DmYaU6DVSbJ2gtsjv_8DWgfTAbEiQ3hkJGqDRJx0BYo4-UDM4sddKn2ReJ8GZ52YbnXiL3AEViMGf-b3n6yM3McYTJDMC45GEdkZgzfoUuT7kSa3GylpvdpZcmaYXM'
-    },
-    {
-      title: 'Remote Sensing Visualization',
-      tags: ['Remote Sensing', 'Data Viz', 'JavaScript'],
-      imageUrl:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuDdwXr9gptf3osVTmTEyw5w8_lDhxN34l4X5ezJ3oUmOcmlBWh8299swLaEK0maYqcu76FqBUZIwLlJ41gyN41QPRXG-x4W1aUiPJNpw_iKC-CzGlE_DAx_QnJJY552pyu--n8ew8Ubtldlfy9mLtbZaS8MOz6JvnPlRRrU6IGioyOHdVEvTmQiuZIbSjThDb672JF_b6Z8Of5iqVzieifY3G5ZlHvO0eTDVpl8v_3bM0pd-jYaVBp3bd8ZYugjssZ6V8zm-LYuLwo',
-      marginTopClass: 'md:mt-16'
-    }
-  ];
+type Project = {
+  title: string;
+  tags: string[];
+  imageUrl: string;
+  marginTopClass?: string;
+};
+
+export const GalleryPage = ({ projects }: { projects: Project[] }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-on-surface">
